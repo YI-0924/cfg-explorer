@@ -62,7 +62,7 @@ from cfgexplorer import cfg_explore
 #
 # Now, call `cfg_explore` with the only argument `binary`, which is the path of the bianry file we prepare to analysis. After running, it will host a website on http://127.0.0.1:5050/ to show the *control flow graph* of the file. You can specify the port by `port` parameter.
 
-cfg_explore(binary='../../m2s-bench-spec2006/999.specrand/specrand_base.i386')
+cfg_explore(binary='./specrand_base.i386')
 
 # Whenever you want to shut down the app, just interrupt the function. For example, in this notebook, click on <kbd>interrupt the kernel</kbd>buttom on the toolbar.
 
@@ -72,11 +72,12 @@ cfg_explore(binary='../../m2s-bench-spec2006/999.specrand/specrand_base.i386')
 #
 # For instance, we can get the `svg` format CFG of `specrand_base.i386'` using:
 
-cfg_explore(binary='../../m2s-bench-spec2006/999.specrand/specrand_base.i386',output='./test.svg')
+cfg_explore(binary='./specrand_base.i386',output='./test.svg')
 
 # `.svg` files can be opened by web-browser directly, it can also be displayed in this notebook:
 
 from IPython.core.display import SVG
+from IPython.display import display
 display(SVG('test.svg'))
 
 # There are also a bunch of formats that `cfg_explore` can handle. The only thing you need to do is to specify proper suffix (i.e. extension name) in path which is passed as`output` argument.
@@ -93,7 +94,7 @@ formats = [
 # Try all formats by:
 
 for format in formats:
-    cfg_explore(binary='../../m2s-bench-spec2006/999.specrand/specrand_base.i386',output='./test.'+format)
+    cfg_explore(binary='./specrand_base.i386',output='./test.'+format)
 
 # View the output `png`:
 #
